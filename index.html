@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetBem-Estar</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="favicon.png.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><i class="fa-solid fa-cat"></i> PetBem-Estar <i class="fa-solid fa-dog"></i></a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#map">Mapa</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero"></section>
+
+        <section id="about">
+            <h1>PetBem-Estar</h1>
+            <p>Um ambiente planejado para o cuidado e a tranquilidade 
+            do seu melhor amigo, onde cada detalhe foi pensado para aliar saúde, 
+            estética e muito carinho. O PetBem-Estar nasceu com o propósito de transformar 
+            a rotina do seu pet em uma experiência de puro conforto, contando com profissionais 
+            especializados, produtos de alta qualidade e um atendimento que respeita 
+            o tempo e a individualidade de cada animal.</p>
+
+            <p>Aqui, oferecemos serviços completos para garantir a vitalidade e a alegria do seu companheiro:</p>
+
+            <p><strong>Banho e Tosa Personalizados:</strong> Utilização de cosméticos hipoalergênicos, água na temperatura 
+            ideal e técnicas que reduzem o estresse, adaptadas à pelagem e ao temperamento do seu pet.</p>
+
+            <p><strong>Veterinário de Confiança:</strong> Consultas preventivas, orientações nutricionais e acompanhamento 
+            clínico com foco na longevidade e no bem-estar integral.</p>
+
+            <p><strong>Espaço de Convivência e Lazer:</strong> Área segura e higienizada para socialização e recreação 
+            supervisionada, ideal para quem precisa de um ambiente acolhedor durante o dia.</p>
+
+            <p><strong>Loja Especializada:</strong> Seleção rigorosa de rações super premium, petiscos naturais, 
+            brinquedos educativos e acessórios que unem durabilidade e estilo.</p>
+
+            <p>Venha nos fazer uma visita e descubra como o cuidado profissional pode 
+            fazer toda a diferença na qualidade de vida do seu pet.</p>
+        </section> 
+
+        <section id="gallery">
+    <h1>Galeria de fotos</h1>
+    
+    <div class="carrossel">
+        <img src="img1.jpg" alt="Imagem 1" class="ativa">
+        <img src="img2.jpg" alt="Imagem 2">
+        <img src="img3.jpg" alt="Imagem 3">
+        <img src="img4.jpg" alt="Imagem 4">
+        <img src="img5.jpg" alt="Imagem 5">
+        <img src="img6.jpg" alt="Imagem 6">
+    </div>
+</section>
+
+<script>
+let indiceAtual = 0;
+const todasImagens = document.querySelectorAll('.carrossel img');
+
+function mudarImagem() {
+  // Esconde todas
+  todasImagens.forEach(function(img) {
+    img.style.opacity = 0;
+  });
+  
+  todasImagens[indiceAtual].style.opacity = 1;
+  
+  indiceAtual = indiceAtual + 1;
+  if (indiceAtual >= todasImagens.length) {
+    indiceAtual = 0;
+  }
+}
+
+mudarImagem();
+
+
+setInterval(mudarImagem, 3000);
+</script>
+
+        <section id="map">
+            <h1>Localização</h1>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.971940245267!2d-48.0621779248162!3d-16.014976128425445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2b05a124c81f%3A0x1f747870d5cb7f41!2sPetz%20Gama%20Leste!5e0!3m2!1spt-BR!2sbr!4v1788908996651!5m2!1spt-BR!2sbr" 
+                width="600" 
+                height="450" 
+                style="border: 0; max-width: 100%;" 
+                allowfullscreen 
+                loading="lazy" 
+                referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+        </section>
+
+        <section id="contact">
+            <h1>Contato</h1>
+            <form>
+                <label>Nome
+                    <input type="text" name="nome" required>
+                </label>
+
+                <label>E-mail
+                    <input type="email" name="email" required>
+                </label>
+
+                <label>Mensagem
+                    <textarea name="mensagem" rows="5" required></textarea>
+                </label>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Todos os Direitos Reservados : Desenvolvido por: 
+            <a href="mailto:gabrieloliveiraobonitao@gmail.com">gabrieloliveiraobonitao@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        let indice = 0;
+        const imagens = document.querySelectorAll('.carrossel img');
+
+        function trocarImagem() {
+            imagens.forEach(img => img.classList.remove('ativa'));
+            indice = (indice + 1) % imagens.length;
+            imagens[indice].classList.add('ativa');
+        }
+
+        setInterval(trocarImagem, 3000);
+    </script>
+
+</body>
+</html>
